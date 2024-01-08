@@ -1,0 +1,37 @@
+import { Component } from "react";
+
+export default class Counter extends Component{
+    constructor(){
+        super();
+        this.state = {
+            //  variable storing object
+            counter : 0
+        }
+    }
+
+    handleClick = (value) =>{
+        this.setState({
+            counter : this.state.counter + value
+        })
+    }
+    
+
+    handleReset = () => {
+        this.setState ({
+            counter : 0
+        })
+    }
+
+
+    render(){
+        return(
+          <>
+            <h1>Counter using class: { this.state.counter}</h1>
+            <button onClick= { () => this.handleClick(1) } > + (Increase)</button>
+            <button onClick= { () => this.handleClick(-1) } > - (Decrease)</button>
+            <button onClick= { () => this.handleReset(1) } > Reset </button>
+          </>
+        )
+    }
+    
+}
